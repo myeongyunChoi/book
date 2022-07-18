@@ -43,7 +43,7 @@ header .logo {
 }
 
 header .logo a img {
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 
@@ -88,11 +88,11 @@ header .login {
 }
 
 #new_book .new_txt h2 {
-  font-size: 56px;
+  font-size: 50px;
 }
 
 #new_book .new_txt h4 {
-  font-size: 35px;
+  font-size: 30px;
   margin-top: 1.5%;
   font-weight: 500;
 }
