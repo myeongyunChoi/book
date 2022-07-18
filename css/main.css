@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ol, ul, li {
@@ -64,7 +66,13 @@ header .menu li {
 
 header .login {
   margin-right: 2%;
-  font-size: 20px;
+  font-size: 18px;
+  background-color: #333;
+  width: 100px;
+  text-align: center;
+  color: white;
+  border-radius: 30px;
+  line-height: 40px;
 }
 
 #book_bg {
@@ -84,7 +92,7 @@ header .login {
   width: 100%;
   height: auto;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 #new_book .new_txt h2 {
@@ -93,8 +101,52 @@ header .login {
 
 #new_book .new_txt h4 {
   font-size: 30px;
-  margin-top: 1.5%;
+  margin-top: 1.2%;
   font-weight: 500;
+}
+
+.new_book_box {
+  width: 100%;
+  height: 80vh;
+  padding-bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.new_book_box .new_box {
+  width: 20%;
+  margin: 0 2%;
+  height: 45%;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1%;
+}
+
+.new_book_box .new_box .img_box {
+  width: 50%;
+}
+
+.new_book_box .new_box .txt_box {
+  width: 50%;
+}
+
+.new_book_box .new_box img {
+  width: 100%;
+  height: 80%;
+  text-align: center;
 }
 
 #best {
@@ -103,6 +155,66 @@ header .login {
   background-image: url(../img/main/best.jpg);
   background-size: cover;
   background-position: center;
+}
+
+#best .best_txt {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 70px;
+}
+
+#best .best_txt h2 {
+  font-size: 50px;
+  margin-top: 1.2%;
+}
+
+#best .best_txt h4 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.category {
+  width: 90%;
+  height: auto;
+  margin: 5% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.category li {
+  border: 3px solid black;
+  padding: 18px 55px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.best_book_box {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.best_book_box .best_box {
+  width: 23%;
+  height: 90%;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
 }
 
 #genre {

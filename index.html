@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>book</title>
     <link rel="stylesheet" href="css/main.css">
 
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
 </head>
+
 <body>
     <div id="wrap">
         <header>
@@ -25,21 +27,99 @@
                 <li>웹소설</li>
                 <li>중고샵</li>
             </ul>
-            <div class="login">
-                <span><a href="">로그인</a></span>
-            </div>
+            <a href="" class="login">로그인</a>
         </header>
+
         <div id="book_bg"></div>
+
         <div id="new_book">
             <div class="new_txt">
                 <h2>새로운 이야기, 밀리의 서재</h2>
-                <h4>대중이 직접 선택한 신인 작가의 작품을 만나보세요.</h4>
+                <h4>대중이 직접 선택한 작가의 새로운 작품을 만나보세요.</h4>
+            </div>
+            <div class="new_book_box">
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <!-- <div class="txt_box"></div> -->
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
+                <div class="new_box">
+                    <div class="img_box"></div>
+                    <div class="txt_box"></div>
+                </div>
             </div>
         </div>
-        <div id="best"></div>
+        <div id="best">
+            <div class="best_txt">
+                <h4>밀리의 서재 베트스셀러</h4>
+                <h2>인기 트렌드 도서 추천</h2>
+            </div>
+            <ul class="category">
+                <li>에세이</li>
+                <li>소설/산문집</li>
+                <li>시/운문집</li>
+                <li>오디오북</li>
+                <li>계발</li>
+                <li>예술</li>
+            </ul>
+            <div class="best_book_box">
+                <div class="best_box"></div>
+                <div class="best_box"></div>
+                <div class="best_box"></div>
+                <div class="best_box"></div>
+            </div>
+        </div>
         <div id="genre"></div>
         <div id="service"></div>
         <footer></footer>
     </div>
+    <script>
+        $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+            data: { query: "산문",sort:"latest", page:"5"},
+            headers: { Authorization: "KakaoAK 7825d323e9c066c84dbfeebce8829253" }
+        })
+            .done(function (msg) {
+                var new_box = document.getElementsByClassName("new_box");
+                for (var i = 0; i < new_box.length; i++) {
+                    $(".img_box").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
+                    $(".txt_box").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".txt_box").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
+
+
+                    var str = msg.documents[i].contents;
+                    var str2 = str.substring(0, 100);
+
+                    $(".txt_box").eq(i).append("<p>" + '<a href="sub_book13.html">' + str2 +"..."+ "</a>" + "</p>");
+                    $(".txt_box").eq(i).append('<a href="#" class="btn">' + "more" + "</a>");
+
+                }
+            });
+    </script>
 </body>
+
 </html>
