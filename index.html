@@ -40,7 +40,7 @@
             <div class="new_book_box">
                 <div class="new_box">
                     <div class="img_box"></div>
-                    <!-- <div class="txt_box"></div> -->
+                    <div class="txt_box"></div>
                 </div>
                 <div class="new_box">
                     <div class="img_box"></div>
@@ -107,18 +107,37 @@
                 var new_box = document.getElementsByClassName("new_box");
                 for (var i = 0; i < new_box.length; i++) {
                     $(".img_box").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
-                    $(".txt_box").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
-                    $(".txt_box").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
+                    $(".img_box").eq(i).append("<h3 class='img_h3'>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".txt_box").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".txt_box").eq(i).append("<h5>" + msg.documents[i].authors + "</h5>");
 
 
                     var str = msg.documents[i].contents;
-                    var str2 = str.substring(0, 100);
+                    var str2 = str.substring(0, 65);
 
-                    $(".txt_box").eq(i).append("<p>" + '<a href="sub_book13.html">' + str2 +"..."+ "</a>" + "</p>");
+                    $(".txt_box").eq(i).append("<p>" + '<a href="">' + str2 +"..."+ "</a>" + "</p>");
                     $(".txt_box").eq(i).append('<a href="#" class="btn">' + "more" + "</a>");
 
                 }
             });
+
+        $(function(){
+            $(".new_box").children().mouseover(function(){
+                $(this).children(".img_h3").hide();
+                $(this).siblings(".txt_box").stop().fadeIn(500).css("display","flex");
+            });
+            $(".new_box").mouseleave(function(){
+                $(".txt_box").fadeOut(700);
+                $(".img_h3").fadeIn(1500);
+            });
+        });
+
+        // var img_box = document.getElementsByClassName("img_box");
+
+        // img_box.addEventListener("mouseover", function (){
+        //     this.nextSibling.style.display="flex";
+        // });
+
     </script>
 </body>
 
