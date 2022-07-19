@@ -303,18 +303,21 @@
             });
 
 
-            const cat = document.querySelectorAll(".category li");
-            const best_inner = document.querySelectorAll(".best_wrap > div");
+        const cat = document.querySelectorAll(".category li");
+        const best_inner = document.querySelectorAll(".best_wrap > div");
 
-            for(let i= 0; i < cat.length; i++){
-                cat[i].addEventListener("click",function(){
-                // best_inner.style.opacity="0";
-                best_inner[i].style.opacity="1";
+        for (let i = 0; i < cat.length; i++) {
+            cat[i].addEventListener("click", function () {
+                // best_inner[i].style.opacity = "0";
+                this.nextSibling.style.opacity="0";
+                best_inner[i].style.opacity = "1";
             });
-            }
+        }
+
+        
 
 
-            
+
 
         // let img_box = document.getElementsByClassName("img_box");
 

@@ -224,7 +224,7 @@ header .login {
 
 .essay {
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -244,7 +244,7 @@ header .login {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .essay .essay_box img {
@@ -270,7 +270,7 @@ header .login {
 .novel {
   opacity: 0;
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -287,9 +287,13 @@ header .login {
   background-color: white;
   box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .novel .novel_box img {
-  width: 40%;
+  width: 160px;
   margin-top: 40px;
 }
 .novel .novel_box p {
@@ -310,7 +314,7 @@ header .login {
 
 .poem {
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -328,9 +332,13 @@ header .login {
   background-color: white;
   box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .poem .poem_box img {
-  width: 40%;
+  width: 160px;
   margin-top: 40px;
 }
 .poem .poem_box p {
@@ -351,7 +359,7 @@ header .login {
 
 .audio {
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -369,9 +377,13 @@ header .login {
   background-color: white;
   box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .audio .audio_box img {
-  width: 40%;
+  width: 160px;
   margin-top: 40px;
 }
 .audio .audio_box p {
@@ -392,7 +404,7 @@ header .login {
 
 .enlightenment {
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -410,9 +422,13 @@ header .login {
   background-color: white;
   box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .enlightenment .enlightenment_box img {
-  width: 40%;
+  width: 160px;
   margin-top: 40px;
 }
 .enlightenment .enlightenment_box p {
@@ -433,7 +449,7 @@ header .login {
 
 .art {
   width: 90%;
-  height: 50vh;
+  height: 55vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -451,9 +467,13 @@ header .login {
   background-color: white;
   box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .art .art_box img {
-  width: 40%;
+  width: 160px;
   margin-top: 40px;
 }
 .art .art_box p {

@@ -241,7 +241,7 @@ header {
 
 @mixin best_box {
     width: 90%;
-    height:50vh;
+    height:55vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
@@ -259,6 +259,10 @@ header {
     background-color: white;
     box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 @mixin best_btn {
@@ -283,10 +287,6 @@ header {
     opacity: 1;
     .essay_box {
         @include best_box_inner;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         img{
             width: 160px;
             margin: 25px;
@@ -310,7 +310,7 @@ header {
     .novel_box {
         @include best_box_inner;
         img{
-            width: 40%;
+            width: 160px;
             margin-top: 40px;
         }
         p{
@@ -331,7 +331,7 @@ header {
     .poem_box {
         @include best_box_inner;
         img{
-            width: 40%;
+            width: 160px;
             margin-top: 40px;
         }
         p{
@@ -352,7 +352,7 @@ header {
     .audio_box {
         @include best_box_inner;
         img{
-            width: 40%;
+            width: 160px;
             margin-top: 40px;
         }
         p{
@@ -373,7 +373,7 @@ header {
     .enlightenment_box {
         @include best_box_inner;
         img{
-            width: 40%;
+            width: 160px;
             margin-top: 40px;
         }
         p{
@@ -394,7 +394,7 @@ header {
     .art_box {
         @include best_box_inner;
         img{
-            width: 40%;
+            width: 160px;
             margin-top: 40px;
         }
         p{
