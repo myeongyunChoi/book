@@ -1,26 +1,43 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
 
-*{
+$font: 'NanumBarunGothic';
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ol, ul, li{
+ol,
+ul,
+li {
     list-style: none;
+    font-family: $font;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
-#wrap{
+
+h3, h5, p{
+    font-family: $font;
+}
+
+#wrap {
     width: 100%;
     height: auto;
 }
 
-header{
+header {
     width: 100%;
     height: 80px;
     position: fixed;
@@ -30,28 +47,33 @@ header{
     justify-content: space-between;
     line-height: 80px;
     align-items: center;
-    .logo{
+
+    .logo {
         width: auto;
         height: 45px;
         margin-left: 2%;
-        a img{
+
+        a img {
             width: auto;
             height: 100%;
         }
     }
-    .menu{
+
+    .menu {
         display: flex;
         width: 50%;
         justify-content: space-evenly;
         cursor: pointer;
-        li{
+
+        li {
             font-size: 18px;
         }
     }
 
-    .login{
+    .login {
         margin-right: 2%;
         font-size: 18px;
+        font-family: $font;
         background-color: #333;
         width: 100px;
         text-align: center;
@@ -61,34 +83,39 @@ header{
     }
 }
 
-#book_bg{
+#book_bg {
     width: 100%;
     height: 525px;
 }
 
-#new_book{
+#new_book {
     width: 100%;
     height: 100vh;
     background-image: url(../img/main/new.jpg);
     background-size: cover;
     background-position: center;
-    .new_txt{
+
+    .new_txt {
         width: 100%;
         height: auto;
         text-align: center;
         padding-top: 70px;
-        h2{
+
+        h2 {
             font-size: 50px;
+            font-family: $font;
         }
-        h4{
+
+        h4 {
             font-size: 30px;
             margin-top: 1.2%;
+            font-family: $font;
             font-weight: 500;
         }
     }
 }
 
-.new_book_box{
+.new_book_box {
     width: 100%;
     height: 80vh;
     padding-bottom: 5%;
@@ -96,7 +123,8 @@ header{
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: flex-end;
-    .new_box{
+
+    .new_box {
         width: 20%;
         margin: 0 2%;
         height: 45%;
@@ -106,34 +134,46 @@ header{
         justify-content: space-evenly;
         align-items: center;
         padding: 1%;
-        .img_box{
+
+        .img_box {
             width: 47%;
-            h3{
+            cursor: pointer;
+            h3 {
                 font-size: 12px;
+                font-family: $font;
                 text-align: center;
                 width: auto;
                 height: 20px;
                 margin-top: 11px;
             }
         }
-        .txt_box{
+
+        .txt_box {
             width: 47%;
             height: 90%;
             padding-left: 3%;
             display: none;
             flex-direction: column;
             justify-content: space-evenly;
-
-            h3{
+            cursor: pointer;
+            h3 {
                 font-size: 14px;
+                font-family: $font;
             }
-            h5{
+
+            h5 {
                 font-size: 12px;
+                font-family: $font;
             }
-            p{
+
+            p {
                 font-size: 10px;
+                font-family: $font;
+                letter-spacing: 1.2px;
+                line-height: 14px;
             }
-            .btn{
+
+            .btn {
                 align-self: flex-end;
                 background-color: #333;
                 border-radius: 30px;
@@ -142,9 +182,11 @@ header{
                 text-align: center;
                 line-height: 25px;
                 font-size: 13px;
+                font-family: $font;
             }
         }
-        img{
+
+        img {
             width: 100%;
             height: auto;
             text-align: center;
@@ -153,35 +195,41 @@ header{
     }
 }
 
-#best{
+#best {
     width: 100%;
     height: 1115px;
     background-image: url(../img/main/best.jpg);
     background-size: cover;
     background-position: center;
-    .best_txt{
+
+    .best_txt {
         width: 100%;
         height: auto;
         text-align: center;
         padding-top: 70px;
-        h2{
+
+        h2 {
             font-size: 50px;
             margin-top: 1.2%;
+            font-family: $font;
         }
-        h4{
+
+        h4 {
             font-size: 30px;
             font-weight: 500;
+            font-family: $font;
         }
     }
 }
 
-.category{
+.category {
     width: 90%;
     height: auto;
     margin: 5% auto;
     display: flex;
     justify-content: space-evenly;
-    li{
+
+    li {
         border: 3px solid black;
         padding: 18px 55px;
         font-size: 18px;
@@ -190,22 +238,178 @@ header{
     }
 }
 
-.best_book_box{
+
+@mixin best_box {
     width: 90%;
-    height: 50vh;
+    height:50vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    .best_box{
-        width: 23%;
-        height: 90%;
-        background-color: white;
-        box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+    position: absolute;
+    top: 0;
+    transition: 1s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin best_box_inner {
+    width: 23%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+    text-align: center;
+}
+
+@mixin best_btn {
+    font-size: 12px;
+    display: inline-block;
+    padding: 2% 0;
+    color: white;
+    border-radius: 30px;
+    width: 100px;
+    background-color: #333;
+}
+
+.best_wrap{
+    position: relative;
+}
+
+.fade{
+    opacity: 1;
+}
+.essay{
+    @include best_box;
+    opacity: 1;
+    .essay_box {
+        @include best_box_inner;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 160px;
+            margin: 25px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+            
+        }
     }
 }
 
-#genre{
+.novel{
+    opacity: 0;
+    @include best_box;
+    .novel_box {
+        @include best_box_inner;
+        img{
+            width: 40%;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+        }
+    }
+}
+
+.poem{
+    @include best_box;
+    opacity: 0;
+    .poem_box {
+        @include best_box_inner;
+        img{
+            width: 40%;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+        }
+    }
+}
+
+.audio{
+    @include best_box;
+    opacity: 0;
+    .audio_box {
+        @include best_box_inner;
+        img{
+            width: 40%;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+        }
+    }
+}
+
+.enlightenment{
+    @include best_box;
+    opacity: 0;
+    .enlightenment_box {
+        @include best_box_inner;
+        img{
+            width: 40%;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+        }
+    }
+}
+
+.art{
+    @include best_box;
+    opacity: 0;
+    .art_box {
+        @include best_box_inner;
+        img{
+            width: 40%;
+            margin-top: 40px;
+        }
+        p{
+            font-size: 13px;
+            padding: 3% 6%;
+            line-height: 19px;
+            text-align: left;
+        }
+        .btn{
+            @include best_btn;
+        }
+    }
+}
+
+#genre {
     width: 100%;
     height: 878px;
     background-image: url(../img/main/genre.jpg);
@@ -213,12 +417,12 @@ header{
     background-position: center;
 }
 
-#service{
+#service {
     width: 100%;
     height: 417px;
 }
 
-footer{
+footer {
     width: 100%;
     height: 200px;
     border: 1px solid black;

@@ -1,17 +1,30 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-ol, ul, li {
+ol,
+ul,
+li {
   list-style: none;
+  font-family: "NanumBarunGothic";
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+h3, h5, p {
+  font-family: "NanumBarunGothic";
 }
 
 #wrap {
@@ -24,49 +37,34 @@ header {
   height: 80px;
   position: fixed;
   background-color: #fff;
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
-          box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   line-height: 80px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 header .logo {
   width: auto;
   height: 45px;
   margin-left: 2%;
 }
-
 header .logo a img {
   width: auto;
   height: 100%;
 }
-
 header .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 50%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
   cursor: pointer;
 }
-
 header .menu li {
   font-size: 18px;
 }
-
 header .login {
   margin-right: 2%;
   font-size: 18px;
+  font-family: "NanumBarunGothic";
   background-color: #333;
   width: 100px;
   text-align: center;
@@ -87,21 +85,20 @@ header .login {
   background-size: cover;
   background-position: center;
 }
-
 #new_book .new_txt {
   width: 100%;
   height: auto;
   text-align: center;
   padding-top: 70px;
 }
-
 #new_book .new_txt h2 {
   font-size: 50px;
+  font-family: "NanumBarunGothic";
 }
-
 #new_book .new_txt h4 {
   font-size: 30px;
   margin-top: 1.2%;
+  font-family: "NanumBarunGothic";
   font-weight: 500;
 }
 
@@ -109,79 +106,59 @@ header .login {
   width: 100%;
   height: 80vh;
   padding-bottom: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
-
 .new_book_box .new_box {
   width: 20%;
   margin: 0 2%;
   height: 45%;
   background-color: white;
-  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
-          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 1%;
 }
-
 .new_book_box .new_box .img_box {
   width: 47%;
+  cursor: pointer;
 }
-
 .new_book_box .new_box .img_box h3 {
   font-size: 12px;
+  font-family: "NanumBarunGothic";
   text-align: center;
   width: auto;
   height: 20px;
   margin-top: 11px;
 }
-
 .new_book_box .new_box .txt_box {
   width: 47%;
   height: 90%;
   padding-left: 3%;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
 }
-
 .new_book_box .new_box .txt_box h3 {
   font-size: 14px;
+  font-family: "NanumBarunGothic";
 }
-
 .new_book_box .new_box .txt_box h5 {
   font-size: 12px;
+  font-family: "NanumBarunGothic";
 }
-
 .new_book_box .new_box .txt_box p {
   font-size: 10px;
+  font-family: "NanumBarunGothic";
+  letter-spacing: 1.2px;
+  line-height: 14px;
 }
-
 .new_book_box .new_box .txt_box .btn {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   background-color: #333;
   border-radius: 30px;
   width: 60px;
@@ -189,14 +166,13 @@ header .login {
   text-align: center;
   line-height: 25px;
   font-size: 13px;
+  font-family: "NanumBarunGothic";
 }
-
 .new_book_box .new_box img {
   width: 100%;
   height: auto;
   text-align: center;
-  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
-          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
 }
 
 #best {
@@ -206,36 +182,30 @@ header .login {
   background-size: cover;
   background-position: center;
 }
-
 #best .best_txt {
   width: 100%;
   height: auto;
   text-align: center;
   padding-top: 70px;
 }
-
 #best .best_txt h2 {
   font-size: 50px;
   margin-top: 1.2%;
+  font-family: "NanumBarunGothic";
 }
-
 #best .best_txt h4 {
   font-size: 30px;
   font-weight: 500;
+  font-family: "NanumBarunGothic";
 }
 
 .category {
   width: 90%;
   height: auto;
   margin: 5% auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-
 .category li {
   border: 3px solid black;
   padding: 18px 55px;
@@ -244,27 +214,262 @@ header .login {
   cursor: pointer;
 }
 
-.best_book_box {
+.best_wrap {
+  position: relative;
+}
+
+.fade {
+  opacity: 1;
+}
+
+.essay {
   width: 90%;
   height: 50vh;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.essay .essay_box {
+  width: 23%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.essay .essay_box img {
+  width: 160px;
+  margin: 25px;
+}
+.essay .essay_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.essay .essay_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
 }
 
-.best_book_box .best_box {
+.novel {
+  opacity: 0;
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.novel .novel_box {
   width: 23%;
-  height: 90%;
+  height: 100%;
   background-color: white;
-  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
-          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+}
+.novel .novel_box img {
+  width: 40%;
+  margin-top: 40px;
+}
+.novel .novel_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.novel .novel_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
+}
+
+.poem {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.poem .poem_box {
+  width: 23%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+}
+.poem .poem_box img {
+  width: 40%;
+  margin-top: 40px;
+}
+.poem .poem_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.poem .poem_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
+}
+
+.audio {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.audio .audio_box {
+  width: 23%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+}
+.audio .audio_box img {
+  width: 40%;
+  margin-top: 40px;
+}
+.audio .audio_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.audio .audio_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
+}
+
+.enlightenment {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.enlightenment .enlightenment_box {
+  width: 23%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+}
+.enlightenment .enlightenment_box img {
+  width: 40%;
+  margin-top: 40px;
+}
+.enlightenment .enlightenment_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.enlightenment .enlightenment_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
+}
+
+.art {
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  transition: 1s;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.art .art_box {
+  width: 23%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+  text-align: center;
+}
+.art .art_box img {
+  width: 40%;
+  margin-top: 40px;
+}
+.art .art_box p {
+  font-size: 13px;
+  padding: 3% 6%;
+  line-height: 19px;
+  text-align: left;
+}
+.art .art_box .btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 2% 0;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  background-color: #333;
 }
 
 #genre {
