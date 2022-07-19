@@ -80,13 +80,13 @@
                 <h4>밀리의 서재 베트스셀러</h4>
                 <h2>인기 트렌드 도서 추천</h2>
             </div>
-            <ul class="category">
-                <li>에세이</li>
-                <li>소설/산문집</li>
-                <li>시/운문집</li>
-                <li>오디오북</li>
-                <li>계발</li>
-                <li>예술</li>
+            <ul class="category" id="cate">
+                <li class="ct_li">에세이</li>
+                <li class="ct_li">소설/산문집</li>
+                <li class="ct_li">시/운문집</li>
+                <li class="ct_li">오디오북</li>
+                <li class="ct_li">계발</li>
+                <li class="ct_li">예술</li>
             </ul>
             <div class="best_wrap">
                 <div class="essay">
@@ -127,7 +127,49 @@
                 </div>
             </div>
         </div>
-        <div id="genre"></div>
+        <div id="genre">
+            <div class="genre_txt">
+                <h4>당신을 기다리는 11만권의 도서</h4>
+                <h2>10년치 베스트셀러</h2>
+                <h2>신간 오디오북 장르 소설까지</h2>
+            </div>
+            <div class="slide_wrap">
+                <ul class="slide">
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                    <li class="slide_box">
+                        <div class="slide_img"></div>
+                        <div class="slide_txt"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div id="service"></div>
         <footer></footer>
     </div>
@@ -303,27 +345,50 @@
             });
 
 
-        const cat = document.querySelectorAll(".category li");
-        const best_inner = document.querySelectorAll(".best_wrap > div");
+        cate.onclick = function (e) {
+            let cat = document.querySelectorAll(".category li");
+            let best_inner = document.querySelectorAll(".best_wrap > div");
+            for (var i = 0; i < cat.length; i++) {
+                cat[i].classList.remove("col");
+                e.target.classList.add("col");
 
-        for (let i = 0; i < cat.length; i++) {
-            cat[i].addEventListener("click", function () {
-                // best_inner[i].style.opacity = "0";
-                this.nextSibling.style.opacity="0";
-                best_inner[i].style.opacity = "1";
-            });
+                cat[i].setAttribute("data-index", i);
+                best_inner[i].setAttribute("data-index", i);
+
+                if (e.target.getAttribute("data-index") == best_inner[i].getAttribute("data-index")) {
+                    best_inner[i].style.opacity = "1";
+                // } else if (e.target.id == "cate") {
+                //     best_inner[i].style.opacity = "1";
+                } else {
+                    best_inner[i].style.opacity = "0";
+                }
+            }
         }
 
-        
+        const slider = document.querySelector(".slide");
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-
-
-
-        // let img_box = document.getElementsByClassName("img_box");
-
-        // img_box.addEventListener("mouseover", function (){
-        //     this.nextSibling.style.display="flex";
-        // });
+        // 시작했을 때 마우스 위치
+        slider.addEventListener("mousedown", function (e) {
+            isDown = true;
+            startX = e.pageX;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener("mouseleave", function () {
+            isDown = false;
+        });
+        slider.addEventListener("mouseup", function () {
+            isDown = false;
+        });
+        slider.addEventListener("mousemove", function (e) {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX;
+            const walk = (x - startX);
+            slider.scrollLeft = scrollLeft - walk;
+        });
 
     </script>
 </body>

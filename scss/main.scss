@@ -28,7 +28,7 @@ a {
     color: black;
 }
 
-h3, h5, p{
+h1, h2, h3, h4, h5, h6, p{
     font-family: $font;
 }
 
@@ -47,7 +47,7 @@ header {
     justify-content: space-between;
     line-height: 80px;
     align-items: center;
-
+    z-index: 500;
     .logo {
         width: auto;
         height: 45px;
@@ -235,6 +235,11 @@ header {
         font-size: 18px;
         border-radius: 30px;
         cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            background-color: #333;
+            color: white;
+        }
     }
 }
 
@@ -248,9 +253,10 @@ header {
     align-items: flex-end;
     position: absolute;
     top: 0;
-    transition: 1s;
+    transition: all 1s;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0;
 }
 
 @mixin best_box_inner {
@@ -275,13 +281,15 @@ header {
     background-color: #333;
 }
 
+.col{
+    background-color: #333;
+    color: white;
+}
+
 .best_wrap{
     position: relative;
 }
 
-.fade{
-    opacity: 1;
-}
 .essay{
     @include best_box;
     opacity: 1;
@@ -305,7 +313,6 @@ header {
 }
 
 .novel{
-    opacity: 0;
     @include best_box;
     .novel_box {
         @include best_box_inner;
@@ -327,7 +334,6 @@ header {
 
 .poem{
     @include best_box;
-    opacity: 0;
     .poem_box {
         @include best_box_inner;
         img{
@@ -348,7 +354,6 @@ header {
 
 .audio{
     @include best_box;
-    opacity: 0;
     .audio_box {
         @include best_box_inner;
         img{
@@ -369,7 +374,6 @@ header {
 
 .enlightenment{
     @include best_box;
-    opacity: 0;
     .enlightenment_box {
         @include best_box_inner;
         img{
@@ -390,7 +394,6 @@ header {
 
 .art{
     @include best_box;
-    opacity: 0;
     .art_box {
         @include best_box_inner;
         img{
@@ -415,6 +418,43 @@ header {
     background-image: url(../img/main/genre.jpg);
     background-size: cover;
     background-position: center;
+
+    .genre_txt{
+        width: 55%;
+        margin: 0 auto;
+        text-align: right;
+        padding-top: 30px;
+        h4{
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+        h2{
+            font-size: 35px;
+            margin-top: 15px;
+        }
+
+    }
+}
+
+.slide_wrap{
+    width: 100%;
+    height: 600px;
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+        .slide{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 160%;
+            display: flex;
+            flex-wrap: nowrap;
+            .slide_box{
+                width: 20%;
+                height: 600px;
+                border: 1px black solid;
+            }
+        }
 }
 
 #service {

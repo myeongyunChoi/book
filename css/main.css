@@ -23,7 +23,7 @@ a {
   color: black;
 }
 
-h3, h5, p {
+h1, h2, h3, h4, h5, h6, p {
   font-family: "NanumBarunGothic";
 }
 
@@ -42,6 +42,7 @@ header {
   justify-content: space-between;
   line-height: 80px;
   align-items: center;
+  z-index: 500;
 }
 header .logo {
   width: auto;
@@ -212,14 +213,20 @@ header .login {
   font-size: 18px;
   border-radius: 30px;
   cursor: pointer;
+  transition: 0.5s;
+}
+.category li:hover {
+  background-color: #333;
+  color: white;
+}
+
+.col {
+  background-color: #333;
+  color: white;
 }
 
 .best_wrap {
   position: relative;
-}
-
-.fade {
-  opacity: 1;
 }
 
 .essay {
@@ -231,9 +238,10 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0;
   opacity: 1;
 }
 .essay .essay_box {
@@ -268,7 +276,6 @@ header .login {
 }
 
 .novel {
-  opacity: 0;
   width: 90%;
   height: 55vh;
   margin: 0 auto;
@@ -277,9 +284,10 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0;
 }
 .novel .novel_box {
   width: 23%;
@@ -321,7 +329,7 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -366,7 +374,7 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -411,7 +419,7 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -456,7 +464,7 @@ header .login {
   align-items: flex-end;
   position: absolute;
   top: 0;
-  transition: 1s;
+  transition: all 1s;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -498,6 +506,41 @@ header .login {
   background-image: url(../img/main/genre.jpg);
   background-size: cover;
   background-position: center;
+}
+#genre .genre_txt {
+  width: 55%;
+  margin: 0 auto;
+  text-align: right;
+  padding-top: 30px;
+}
+#genre .genre_txt h4 {
+  font-size: 18px;
+  margin-bottom: 45px;
+}
+#genre .genre_txt h2 {
+  font-size: 35px;
+  margin-top: 15px;
+}
+
+.slide_wrap {
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.slide_wrap .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.slide_wrap .slide .slide_box {
+  width: 20%;
+  height: 600px;
+  border: 1px black solid;
 }
 
 #service {
