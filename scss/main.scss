@@ -240,6 +240,10 @@ header {
             background-color: #333;
             color: white;
         }
+        &.col{
+                background-color: #333;
+                color: white;
+        }
     }
 }
 
@@ -279,11 +283,6 @@ header {
     border-radius: 30px;
     width: 100px;
     background-color: #333;
-}
-
-.col{
-    background-color: #333;
-    color: white;
 }
 
 .best_wrap{
@@ -418,6 +417,7 @@ header {
     background-image: url(../img/main/genre.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
 
     .genre_txt{
         width: 55%;
@@ -432,7 +432,20 @@ header {
             font-size: 35px;
             margin-top: 15px;
         }
+    }
 
+    .key{
+        width: 150px;
+        position: absolute;
+        top: 12.5%;
+        right: 10%;
+        span{
+            font-size: 70px;
+            font-family: $font;
+        }
+        .prev{
+            margin-right: 33%;
+        }
     }
 }
 
