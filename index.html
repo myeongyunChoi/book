@@ -7,12 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book</title>
     <link rel="stylesheet" href="css/main.css">
-
-
-
-
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -130,52 +126,93 @@
         <div id="genre">
             <div class="genre_txt">
                 <h4>당신을 기다리는 11만권의 도서</h4>
-                <h2>10년치 베스트셀러</h2>
-                <h2>신간 오디오북 장르 소설까지</h2>
+                <h2>다양한 출판사들의 베스트셀러</h2>
+                <h2>신간 오디오북부터 장르 소설까지</h2>
             </div>
             <div class="key">
                 <span class="prev">&lt;</span>
                 <span class="next">&gt;</span>
             </div>
             <div class="slide_wrap">
+                <div class="overlay"></div>
                 <ul class="slide">
-                    <li class="slide_box">---1
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---2
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---3
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---4
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---5
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---6
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---7
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">---8
+                    <li class="slide_box">
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
                 </ul>
             </div>
         </div>
-        <div id="service"></div>
-        <footer></footer>
+        <div id="service">
+            <div class="service_inner">
+                <div class="service_1">
+                    <h2>읽을 책을 알려주는 완독지수</h2> 
+                    <h4>350만 밀리 회원이 먼저 읽고
+                        다 읽을 확률과 예상 시간을 알려드려요</h4>
+                </div>
+                <div class="service_2">
+                    <h2>당신의 일상을 1밀리 +</h2> 
+                    <h4>독서와 무제한 친해지리</h4>
+                </div>
+                <div class="service_3">
+                    <h2>당신을 기다리는 11만권의 도서</h2> 
+                    <h4>첫 달 무료 구독을 통해
+                        어떤 도서가 있는지 확인해보세요</h4>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span class="fot_logo">
+                <a href="">(주)밀리의 서재</a>
+            </span>
+            <div class="more">
+                <ul class="guide">
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">청소년보호정책</a></li>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">B2B 문의</a></li>
+                    <li><a href="">콘텐츠 제휴문의</a></li>
+                    <li><a href="">뷰어 다운로드</a></li>
+                    <li><a href="">회사 소개</a></li>
+                </ul>
+                <ul class="sns">
+                    <li><a href=""><img src="img/common/inst.png" alt=""></a></li>
+                    <li><a href=""><img src="img/common/icon.png" alt=""></a></li>
+                    <li><a href=""><img src="img/common/post.png" alt=""></a></li>
+                    <li><a href=""><img src="img/common/blog.png" alt=""></a></li>
+                </ul>
+            </div>
+            <p>Copyright © 2022 밀리의 서재 All Rights Reserved.</p>
+        </footer>
     </div>
     <script>
         $.ajax({
@@ -209,8 +246,8 @@
                 $(this).siblings(".txt_box").stop().fadeIn(500).css("display", "flex");
             });
             $(".new_box").mouseleave(function () {
-                $(".txt_box").fadeOut(700);
-                $(".img_h3").fadeIn(1500);
+                $(".txt_box").hide();
+                $(".img_h3").fadeIn(500);
             });
         });
 
@@ -348,30 +385,6 @@
                 }
             });
 
-
-        //
-        $.ajax({
-            method: "GET",
-            url: "https://dapi.kakao.com/v3/search/book?target=title",
-            data: { query: "소설", sort: " accuracy", page: "1" },
-            headers: { Authorization: "KakaoAK 7825d323e9c066c84dbfeebce8829253" }
-        })
-            .done(function (msg) {
-                let slide_box = document.getElementsByClassName("slide_box");
-                for (let i = 0; i < slide_box.length+6; i++) {
-                    $(".slide_img").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
-                    $(".slide_txt").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
-                    $(".slide_txt").eq(i).append("<h5>" + msg.documents[i].authors + "</h5>");
-
-
-                    let str = msg.documents[i].contents;
-                    let str2 = str.substring(0, 92);
-
-                    $(".slide_txt").eq(i).append("<p>" + '<a href="">' + str2 + "..." + "</a>" + "</p>");
-                    $(".slide_txt").eq(i).append('<a href="#" class="btn">' + "MORE" + "</a>");
-                }
-            });//슬라이드 도서
-
         cate.onclick = function (e) {
             let cat = document.querySelectorAll(".category li");
             let best_inner = document.querySelectorAll(".best_wrap > div");
@@ -431,6 +444,18 @@
                 slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + "px";
                 slides.style.transition = "0.75s ease-out";
             }
+            // for (let o = 0; o < slideCount; o++) {
+            //     slideImg[o].classList.remove("opa");
+            // }
+
+            // let x = 5;
+            // slideImg[x].classList.add("opa");
+            // x++;
+            // if( x == slideCount){
+            //     x=9;
+            // }
+
+
             if (currentIdx === slideCount - 1) {
                 setTimeout(function () {
                     slides.style.left = -(slideWidth + slideMargin) + "px";
@@ -455,6 +480,21 @@
             currentIdx -= 1;
         });
 
+        //
+        $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+            data: { query: "소설", sort: " accuracy", page: "5" },
+            headers: { Authorization: "KakaoAK 7825d323e9c066c84dbfeebce8829253" }
+        })
+            .done(function (msg) {
+                let slide_box = document.getElementsByClassName("slide_box");
+                for (let i = 0; i < slide_box.length + 6; i++) {
+                    $(".slide_img").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
+                    $(".slide_txt").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".slide_txt").eq(i).append("<h5>" + msg.documents[i].authors + " | " + msg.documents[i].publisher + "</h5>");
+                }
+            });//슬라이드 도서
         // const slider = document.querySelector(".slide");
         // let isDown = false;
         // let startX;

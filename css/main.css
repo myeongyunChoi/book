@@ -77,7 +77,23 @@ header .menu {
 }
 
 header .menu li {
+  position: relative;
   font-size: 18px;
+}
+
+header .menu li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .menu li:hover::after {
+  border-bottom: 3px solid black;
 }
 
 header .login {
@@ -729,6 +745,7 @@ header .login {
 #genre .key span {
   font-size: 70px;
   font-family: "NanumBarunGothic";
+  cursor: pointer;
 }
 
 #genre .key .prev {
@@ -755,19 +772,137 @@ header .login {
       flex-wrap: nowrap;
 }
 
-.slide_wrap .slide .slide_box {
+.slide_box {
   width: 20%;
   height: 600px;
-  border: 1px black solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slide_box img {
+  width: 230px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+          box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+}
+
+.slide_box img:hover {
+  -webkit-transform: translateY(-33px);
+          transform: translateY(-33px);
+}
+
+.slide_box .slide_txt {
+  text-align: center;
+}
+
+.slide_box .slide_txt h3 {
+  font-size: 17px;
+}
+
+.slide_box .slide_txt h5 {
+  font-size: 14px;
+  margin-top: 25px;
+  color: #999;
 }
 
 #service {
   width: 100%;
-  height: 417px;
+  height: 500px;
+  padding: 2.5% 0;
+}
+
+#service .service_inner {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#service .service_inner div {
+  width: 33%;
+  height: 100%;
+  text-align: center;
+}
+
+.service_2 {
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
 
 footer {
   width: 100%;
   height: 200px;
-  border: 1px solid black;
+  background-color: #818181;
+  padding: 1%;
+}
+
+footer a {
+  color: white;
+  font-family: "NanumBarunGothic";
+}
+
+footer .fot_logo a {
+  font-size: 20px;
+  line-height: 70px;
+}
+
+footer .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+footer p {
+  color: white;
+  line-height: 50px;
+  font-size: 14px;
+}
+
+.guide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.guide a {
+  font-size: 14px;
+}
+
+.sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sns img {
+  width: 80px;
+  height: 25px;
 }

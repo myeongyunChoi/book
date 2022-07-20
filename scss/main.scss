@@ -64,9 +64,21 @@ header {
         width: 50%;
         justify-content: space-evenly;
         cursor: pointer;
-
         li {
+            position: relative;
             font-size: 18px;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.2s;
+            }
+            &:hover::after{
+                border-bottom: 3px solid black;
+            }
         }
     }
 
@@ -442,6 +454,7 @@ header {
         span{
             font-size: 70px;
             font-family: $font;
+            cursor: pointer;
         }
         .prev{
             margin-right: 33%;
@@ -462,21 +475,107 @@ header {
             width: 160%;
             display: flex;
             flex-wrap: nowrap;
-            .slide_box{
-                width: 20%;
-                height: 600px;
-                border: 1px black solid;
-            }
         }
+}
+
+// .opa{
+//     opacity: 0.2;
+// }
+
+.slide_box{
+    width: 20%;
+    height: 600px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    img{
+        width: 230px;
+        transition: 0.3s ease-in-out;
+        box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
+        &:hover{
+            transform: translateY(-33px);
+        }
+    }
+    .slide_txt{
+        text-align: center;
+        h3{
+            font-size: 17px;
+        }
+        h5{
+            font-size: 14px;
+            margin-top: 25px;
+            color: #999;
+        }
+    }
 }
 
 #service {
     width: 100%;
-    height: 417px;
+    height: 500px;
+    padding: 2.5% 0;
+    .service_inner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        div{
+            width: 33%;
+            height: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.service_2{
+    border-left: 1px solid #333 ;
+    border-right: 1px solid #333 ;
 }
 
 footer {
     width: 100%;
     height: 200px;
-    border: 1px solid black;
+    background-color: #818181;
+    padding: 1%;
+    a{
+        color: white;
+        font-family: $font;
+        }
+    .fot_logo{
+    
+        a{
+        font-size:20px ;
+        line-height: 70px;
+        }
+    }
+    .more{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    p{
+        color: white;
+        line-height: 50px;
+        font-size: 14px;
+    }
+}
+
+.guide{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    a{
+        font-size: 14px;
+    }
+}
+
+.sns{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    img{
+        width: 80px;
+        height: 25px;
+    }
 }
