@@ -29,7 +29,23 @@
             <a href="" class="login">로그인</a>
         </header>
 
-        <div id="book_bg"></div>
+        <div id="book_bg">
+            <ul class="bg_slide">
+                <li class="bg_box bg1">
+                    <img src="img/main/bg_3.jpg" alt="">
+                </li>
+                <li class="bg_box bg2">
+                    <img src="img/main/bg_1.png" alt="">
+                </li>
+                <li class="bg_box bg3">
+                    <img src="img/main/bg_2.png" alt="">
+                </li>
+            </ul>
+            <div class="bg_key">
+                <div class="bg_prev"></div>
+                <div class="bg_next"></div>
+            </div>
+        </div>
 
         <div id="new_book">
             <div class="new_txt">
@@ -174,22 +190,32 @@
         <div id="service">
             <div class="service_inner">
                 <div class="service_box">
-                    <h2>읽을 책을 알려주는 완독지수</h2> 
+                    <h2>읽을 책을 알려주는 완독지수</h2>
                     <h4>350만 밀리 회원이 먼저 읽고
                         다 읽을 확률과 예상 시간을 알려드려요.</h4>
                     <a href="" class="plus">+</a>
                 </div>
                 <div class="service_box service_2">
-                    <h2>당신의 일상을 1밀리 +</h2> 
+                    <h2>당신의 일상을 1밀리 +</h2>
                     <h4>독서와 무제한 친해지리</h4>
                     <a href="" class="plus">+</a>
                 </div>
                 <div class="service_box">
-                    <h2>당신을 기다리는 11만권의 도서</h2> 
+                    <h2>당신을 기다리는 11만권의 도서</h2>
                     <h4>첫 달 무료 구독을 통해
                         어떤 도서가 있는지 확인해보세요.</h4>
-                        <a href="" class="plus">+</a>
+                    <a href="" class="plus">+</a>
                 </div>
+            </div>
+        </div>
+        <div id="online">
+            <div class="on_txt">
+                <h2>10만권의 전자책,당신의 일상속으로</h2>
+                <ul>
+                    <li>10만권의 전자책. 매달 3,000권 업데이트까지.</li>
+                    <li>최신 베스트셀러, 신간 경제경영 도서 등 원하는 책은</li>
+                    <li>대기 없이 무제한으로 즐길 수 있습니다.</li>
+                </ul>
             </div>
         </div>
         <footer>
@@ -218,6 +244,66 @@
         </footer>
     </div>
     <script>
+
+
+        let slide = document.querySelector(".bg_slide");
+        let slide_img = document.querySelectorAll(".bg_slide li");
+        let idx = 0;
+        slide_count = slide_img.length;
+        let bg_prev = document.querySelector(".bg_prev");
+        let bg_next = document.querySelector(".bg_next");
+        slide_width = window.innerWidth;
+        make_clone();
+        start();
+
+        function make_clone() {
+            let clone_first = slide_img[0].cloneNode(true);
+            // let clone_second = slide_img[1].cloneNode(true);
+            let clone_last = slide.lastElementChild.cloneNode(true);
+            slide.append(clone_first);
+            // slide.append(clone_second);
+            slide.insertBefore(clone_last, slide.firstElementChild);
+        }//무한슬라이드를 위한 클론 생성 윈도우 이너에 들어가는 박스 수만큼
+
+        function start() {
+            slide.style.width = slide_width * (slide_count + 2) + "px";
+            slide.style.left = -(slide_width) + "px";
+        }//슬라이드 한면의 넓이와 슬라이드 한 칸의 넓이
+
+        bg_next.addEventListener("click", function () {
+            if (idx <= slide_count) {
+                slide.style.left = -(idx + 2) * slide_width + "px";
+                slide.style.transition = "0.75s ease-out";
+            }
+            if (idx === slide_count - 1) {
+                setTimeout(function () {
+                    slide.style.left = -slide_width + "px";
+                    slide.style.transition = "0s ease-out";
+                }, 750);
+                idx = -1;
+            }
+            idx += 1;
+        });
+
+        bg_prev.addEventListener("click", function () {
+            if (idx >= 0) {
+                slide.style.left = -idx * slide_width + "px";
+                slide.style.transition = `${0.5}s ease-out`;
+            }
+            if (idx === 0) {
+                setTimeout(function () {
+                    slide.style.left = -slide_count * slide_width + "px";
+                    slide.style.transition = `${0}s ease-out`;
+                }, 500);
+                idx = slide_count;
+            }
+            idx -= 1;
+        });
+
+
+
+
+
         $.ajax({
             method: "GET",
             url: "https://dapi.kakao.com/v3/search/book?target=title",
@@ -447,18 +533,6 @@
                 slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + "px";
                 slides.style.transition = "0.75s ease-out";
             }
-            // for (let o = 0; o < slideCount; o++) {
-            //     slideImg[o].classList.remove("opa");
-            // }
-
-            // let x = 5;
-            // slideImg[x].classList.add("opa");
-            // x++;
-            // if( x == slideCount){
-            //     x=9;
-            // }
-
-
             if (currentIdx === slideCount - 1) {
                 setTimeout(function () {
                     slides.style.left = -(slideWidth + slideMargin) + "px";
@@ -497,8 +571,10 @@
                     $(".slide_txt").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
                     $(".slide_txt").eq(i).append("<h5>" + msg.documents[i].authors + " | " + msg.documents[i].publisher + "</h5>");
                 }
-            });//슬라이드 도서
-        // const slider = document.querySelector(".slide");
+            });
+
+        // 슬라이드 도서
+        // const slider = document.querySelector(".bg_slide");
         // let isDown = false;
         // let startX;
         // let scrollLeft;

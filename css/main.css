@@ -84,7 +84,7 @@ header .menu li {
 header .menu li::after {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -110,7 +110,84 @@ header .login {
 
 #book_bg {
   width: 100%;
-  height: 525px;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg_slide {
+  width: 300%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  left: 0;
+}
+
+.bg_slide .bg_box {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+}
+
+.bg_slide h1 {
+  font-size: 150px;
+}
+
+.bg1 img {
+  width: 100%;
+  height: 163%;
+  margin-top: -5%;
+}
+
+.bg2 img {
+  position: absolute;
+  width: 60vw;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+
+.bg3 img {
+  width: 50vw;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+}
+
+.bg_key {
+  position: absolute;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100vw;
+  padding: 0 3%;
+}
+
+.bg_key div {
+  width: 60px;
+  height: 10px;
+  border-bottom: 3px solid black;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.bg_key .bg_next:hover {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.bg_key .bg_prev:hover {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
 }
 
 #new_book {
@@ -719,26 +796,26 @@ header .login {
 }
 
 #genre .genre_txt {
-  width: 55%;
+  width: 45%;
   margin: 0 auto;
   text-align: right;
-  padding-top: 30px;
+  padding-top: 120px;
 }
 
 #genre .genre_txt h4 {
   font-size: 18px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 #genre .genre_txt h2 {
   font-size: 35px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 #genre .key {
   width: 150px;
   position: absolute;
-  top: 12.5%;
+  top: 23%;
   right: 10%;
 }
 
@@ -754,8 +831,8 @@ header .login {
 
 .slide_wrap {
   width: 100%;
-  height: 600px;
-  margin-top: 50px;
+  height: 500px;
+  margin-top: 127px;
   overflow: hidden;
   position: relative;
 }
@@ -774,7 +851,7 @@ header .login {
 
 .slide_box {
   width: 20%;
-  height: 600px;
+  height: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -791,7 +868,7 @@ header .login {
 }
 
 .slide_box img {
-  width: 230px;
+  width: 160px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   -webkit-box-shadow: 5px 5px 2px 3px rgba(46, 46, 46, 0.09);
@@ -813,7 +890,7 @@ header .login {
 
 .slide_box .slide_txt h5 {
   font-size: 14px;
-  margin-top: 25px;
+  margin-top: 15px;
   color: #999;
 }
 
@@ -883,6 +960,34 @@ header .login {
   border-right: 0.5px solid #333;
 }
 
+#online {
+  background-image: url(../img/main/bg-books.jpeg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.on_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ffff;
+  text-align: center;
+}
+
+.on_txt ul {
+  margin-top: 30px;
+}
+
+.on_txt ul li {
+  line-height: 30px;
+  font-size: 14px;
+}
+
 footer {
   width: 100%;
   height: 200px;
@@ -896,7 +1001,7 @@ footer a {
 }
 
 footer .fot_logo a {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 70px;
 }
 
@@ -913,7 +1018,7 @@ footer .more {
 footer p {
   color: white;
   line-height: 50px;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .guide {
@@ -927,7 +1032,7 @@ footer p {
 }
 
 .guide a {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .sns {
@@ -941,11 +1046,11 @@ footer p {
 }
 
 .sns img {
-  width: 60px;
+  width: 50px;
   height: auto;
 }
 
 .sns .blog {
-  width: 40px;
+  width: 30px;
   height: auto;
 }
