@@ -520,24 +520,39 @@ header {
         display: flex;
         justify-content: center;
 
-        div{
+        .service_box{
             width: 33%;
             height: 100%;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            align-items: center;
+            &:hover{
+                color: red;
+            }
+            &:hover .plus{
+                transform: rotate( 90deg );
+                color: red;
+            }    
             h2{
+                margin-top: 20%;
                 font-size: 27px;
-                margin-top: 80px;
             }
             h4{
-                margin-top: 26px;
+                margin-top: 10%;
             }
+        }
+        .plus{
+            margin-top: 7%;
+            font-size: 80px;
+            transition: 0.5s;
         }
     }
 }
 
 .service_2{
-    border-left: 1px solid #333 ;
-    border-right: 1px solid #333 ;
+    border-left: 0.5px solid #333 ;
+    border-right: 0.5px solid #333 ;
 }
 
 footer {
@@ -591,3 +606,4 @@ footer {
         height: auto;
     }
 }
+

@@ -834,24 +834,53 @@ header .login {
           justify-content: center;
 }
 
-#service .service_inner div {
+#service .service_inner .service_box {
   width: 33%;
   height: 100%;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#service .service_inner div h2 {
+#service .service_inner .service_box:hover {
+  color: red;
+}
+
+#service .service_inner .service_box:hover .plus {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: red;
+}
+
+#service .service_inner .service_box h2 {
+  margin-top: 20%;
   font-size: 27px;
-  margin-top: 80px;
 }
 
-#service .service_inner div h4 {
-  margin-top: 26px;
+#service .service_inner .service_box h4 {
+  margin-top: 10%;
+}
+
+#service .service_inner .plus {
+  margin-top: 7%;
+  font-size: 80px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .service_2 {
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
+  border-left: 0.5px solid #333;
+  border-right: 0.5px solid #333;
 }
 
 footer {
