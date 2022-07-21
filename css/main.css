@@ -143,15 +143,73 @@ header .login {
   margin-top: -5%;
 }
 
+.bg2 {
+  padding: 0.5% 1%;
+}
+
 .bg2 img {
   position: absolute;
-  width: 60vw;
-  bottom: 0;
-  right: 0;
+  width: 50vw;
+  bottom: 30px;
+  right: 5%;
   height: auto;
 }
 
-.bg3 img {
+.bg2 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 100px;
+  width: 50vw;
+  height: 100%;
+}
+
+.bg2 div h5 {
+  font-size: 20px;
+}
+
+.bg2 div .b2b li {
+  font-size: 50px;
+  line-height: 70px;
+}
+
+.bg2 div .bg_2_more {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.bg3 {
+  padding: 0.5% 1%;
+}
+
+.bg3 .bg_3_img_box {
+  width: 50vw;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.bg3 .bg_3_img_box img {
+  width: 30%;
+  height: auto;
+}
+
+.bg3 .bg3_ri {
   width: 50vw;
   position: absolute;
   right: 5%;
@@ -172,9 +230,9 @@ header .login {
 }
 
 .bg_key div {
-  width: 60px;
+  width: 70px;
   height: 10px;
-  border-bottom: 3px solid black;
+  border-bottom: 5px solid black;
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;

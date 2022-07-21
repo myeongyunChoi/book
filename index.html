@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,10 +34,26 @@
                     <img src="img/main/bg_3.jpg" alt="">
                 </li>
                 <li class="bg_box bg2">
+                    <div class="bg_2_txt">
+                        <h5>기업 복지도 독서와 무제한 친해지리</h5>
+                        <ul class="b2b">
+                            <li>밀리의 서재</li>
+                            <li>B2B</li>
+                            <li>서비스</li>
+                        </ul>
+                        <ul class="bg_2_more">
+                            <li>기업 고객을 위한 </li>
+                            <li>특별한 혜택을 만나보세요</li>
+                        </ul>
+                    </div>
                     <img src="img/main/bg_1.png" alt="">
                 </li>
                 <li class="bg_box bg3">
-                    <img src="img/main/bg_2.png" alt="">
+                    <div class="bg_3_img_box">
+                        <img src="img/main/bg_3_top.png" alt="">
+                        <img src="img/main/bg_3_bot.png" alt="">
+                    </div>
+                    <img src="img/main/bg_2.png" alt="" class="bg3_ri">
                 </li>
             </ul>
             <div class="bg_key">
@@ -152,35 +167,35 @@
             <div class="slide_wrap">
                 <div class="overlay"></div>
                 <ul class="slide">
-                    <li class="slide_box">
+                    <li class="slide_box">----1111111
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----2222222
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----3333333
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----4444444
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----5555555
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----6666666
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----7777777
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
-                    <li class="slide_box">
+                    <li class="slide_box">----8888888
                         <div class="slide_img"></div>
                         <div class="slide_txt"></div>
                     </li>
@@ -244,10 +259,8 @@
         </footer>
     </div>
     <script>
-
-
         let slide = document.querySelector(".bg_slide");
-        let slide_img = document.querySelectorAll(".bg_slide li");
+        let slide_img = document.querySelectorAll(".bg_slide > li");
         let idx = 0;
         slide_count = slide_img.length;
         let bg_prev = document.querySelector(".bg_prev");
@@ -258,10 +271,8 @@
 
         function make_clone() {
             let clone_first = slide_img[0].cloneNode(true);
-            // let clone_second = slide_img[1].cloneNode(true);
             let clone_last = slide.lastElementChild.cloneNode(true);
             slide.append(clone_first);
-            // slide.append(clone_second);
             slide.insertBefore(clone_last, slide.firstElementChild);
         }//무한슬라이드를 위한 클론 생성 윈도우 이너에 들어가는 박스 수만큼
 
@@ -271,7 +282,7 @@
         }//슬라이드 한면의 넓이와 슬라이드 한 칸의 넓이
 
         bg_next.addEventListener("click", function () {
-            if (idx <= slide_count) {
+            if (idx <= slide_count -1) {
                 slide.style.left = -(idx + 2) * slide_width + "px";
                 slide.style.transition = "0.75s ease-out";
             }
@@ -288,21 +299,17 @@
         bg_prev.addEventListener("click", function () {
             if (idx >= 0) {
                 slide.style.left = -idx * slide_width + "px";
-                slide.style.transition = `${0.5}s ease-out`;
+                slide.style.transition = `0.75s ease-out`;
             }
             if (idx === 0) {
                 setTimeout(function () {
                     slide.style.left = -slide_count * slide_width + "px";
-                    slide.style.transition = `${0}s ease-out`;
+                    slide.style.transition = `0s ease-out`;
                 }, 500);
                 idx = slide_count;
             }
             idx -= 1;
         });
-
-
-
-
 
         $.ajax({
             method: "GET",
@@ -508,7 +515,6 @@
         makeClone();
         initfunction();
         function makeClone() {
-            // for(let i = 0; i< 5; i++){
             let cloneSlide_first = slideImg[0].cloneNode(true);
             let cloneSlide_second = slideImg[1].cloneNode(true);
             let cloneSlide_third = slideImg[2].cloneNode(true);
@@ -526,7 +532,7 @@
         function initfunction() {
             slides.style.width = slideWidth * (slideCount + 6) + "px";
             slides.style.left = -(slideWidth) + "px";
-        }//슬라이드 한면의 넓이와 슬라이드 한 칸의 넓이
+        }//전체 넓이는 클론 개수 포함, 슬라이드 한면의 넓이와 슬라이드 한 칸의 넓이
 
         next.addEventListener("click", function () {
             if (currentIdx <= slideCount - 1) {
@@ -545,19 +551,18 @@
         prev.addEventListener("click", function () {
             if (currentIdx >= 0) {
                 slides.style.left = -currentIdx * (slideWidth + slideMargin) + "px";
-                slides.style.transition = `${0.5}s ease-out`;
+                slides.style.transition =  "0.75s ease-out";
             }
             if (currentIdx === 0) {
                 setTimeout(function () {
                     slides.style.left = -slideCount * (slideWidth + slideMargin) + "px";
-                    slides.style.transition = `${0}s ease-out`;
+                    slides.style.transition = "0s ease-out";
                 }, 500);
                 currentIdx = slideCount;
             }
             currentIdx -= 1;
         });
 
-        //
         $.ajax({
             method: "GET",
             url: "https://dapi.kakao.com/v3/search/book?target=title",
@@ -566,39 +571,12 @@
         })
             .done(function (msg) {
                 let slide_box = document.getElementsByClassName("slide_box");
-                for (let i = 0; i < slide_box.length + 6; i++) {
+                for (let i = 0; i < slide_box.length+6; i++) {
                     $(".slide_img").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
                     $(".slide_txt").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
                     $(".slide_txt").eq(i).append("<h5>" + msg.documents[i].authors + " | " + msg.documents[i].publisher + "</h5>");
                 }
             });
-
-        // 슬라이드 도서
-        // const slider = document.querySelector(".bg_slide");
-        // let isDown = false;
-        // let startX;
-        // let scrollLeft;
-
-        // // 시작했을 때 마우스 위치
-        // slider.addEventListener("mousedown", function (e) {
-        //     isDown = true;
-        //     startX = e.pageX;
-        //     scrollLeft = slider.scrollLeft;
-        // });
-        // slider.addEventListener("mouseleave", function () {
-        //     isDown = false;
-        // });
-        // slider.addEventListener("mouseup", function () {
-        //     isDown = false;
-        // });
-        // slider.addEventListener("mousemove", function (e) {
-        //     if (!isDown) return;
-        //     e.preventDefault();
-        //     const x = e.pageX;
-        //     const walk = (x - startX);
-        //     slider.scrollLeft = scrollLeft - walk;
-        // });
-
     </script>
 </body>
 
