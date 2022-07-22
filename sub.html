@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/common.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="js/sub_ajax.js"></script>
 </head>
 
 <body>
@@ -34,26 +35,73 @@
             <div class="contents">
                 <div class="book">
                     <div class="book_img"></div>
-                    <div class="left_detail"></div>
+                    <ul class="left_detail">
+                        <li><img src="img/sub/icon_book.png" alt=""><a href="">미리보기</a></li>
+                        <li>국외 소설 부분 베스트셀러</li>
+                        <li><img src="img/sub/icon_star.png" alt=""></li>
+                    </ul>
                 </div>
-                <div class="choice"></div>
+                <div class="choice">
+                    <h2>파라다이스 1</h2>
+                    <p>베르나르 베르베르 장편소설</p>
+                    <ul class="choice_head">
+                        <li>원제 : Paradis sur Mesure (2008)</li>
+                        <li>베르나르 베르베르 저/임희근 역</li>
+                        <li>출간일 : 2012년 04월 20일 </li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <th>정가</th>
+                            <td>11,800원</td>
+                        </tr>
+                        <tr>
+                            <th>판매가</th>
+                            <td>10,620원(10% 할인)</td>
+                        </tr>
+                        <tr>
+                            <th>millie point</th>
+                            <td>
+                                <ul>
+                                    <li>590원 (5% 적립)</li>
+                                    <li>5만원이상 구매 시 2천원 추가적립 5만원이상 구매 시 2천원 추가적립 안내</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>구매혜택</th><td><span><img src="img/sub/good.png" alt="">에디터 추천</span><span><img src="img/sub/sun.png" alt="">당일 출고</span></td>
+                        </tr>
+                        <tr>
+                            <th>구매수량</th><td><button>-</button><input type="text"><button>+</button></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-        <div id="series"></div>
+        <div id="series">
+            <div class="check"></div>
+            <div class="series_book"></div>
+        </div>
 
-        <div id="more"></div>
+        <div id="more">
+            <div class="contents">
+                <div class="more_1"></div>
+                <div class="more_2"></div>
+            </div>
+        </div>
+
+        <div id="category_wrap">
+            <ul class="category">
+                <li>책소개</li>
+                <li>리뷰</li>
+            </ul>
+        </div>
 
         <div id="guide">
-            <div class="category_wrap">
-                <ul class="category">
-                    <li>책소개</li>
-                    <li>리뷰</li>
-                </ul>
+            <div class="contents">
+                <div class="detail"></div>
+                <!-- <div id="review"></div> -->
+                <div class="sticky_wrap"></div>
             </div>
-            <div id="detail"></div>
-            <!-- <div id="review"></div> -->
-
-            <div id="sticky_wrap"></div>
         </div>
         <footer>
             <span class="fot_logo">
