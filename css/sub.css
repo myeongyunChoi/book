@@ -1,0 +1,58 @@
+.contents {
+  margin: 0 auto;
+  width: 1300px;
+  height: 100%;
+  border: 1px solid black;
+}
+
+#purchase {
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+}
+#purchase .contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book {
+  width: 47%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.choice {
+  width: 53%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+#series {
+  width: 100%;
+  height: 350px;
+  border: 1px solid black;
+}
+
+#more {
+  width: 100%;
+  height: 200px;
+  border: 1px solid black;
+}
+
+#guide {
+  width: 100%;
+  height: 300vh;
+  border: 1px solid black;
+}
+#guide .category_wrap {
+  width: 100%;
+  height: 50px;
+  background-color: #EEEEEE;
+}
+#guide ul {
+  margin: 0 auto;
+  width: 1300px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+}
