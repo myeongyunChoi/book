@@ -49,7 +49,7 @@
                         <li>베르나르 베르베르 저/임희근 역</li>
                         <li>출간일 : 2012년 04월 20일 </li>
                     </ul>
-                    <table>
+                    <table class="pay">
                         <tr>
                             <th>정가</th>
                             <td>11,800원</td>
@@ -63,17 +63,24 @@
                             <td>
                                 <ul>
                                     <li>590원 (5% 적립)</li>
-                                    <li>5만원이상 구매 시 2천원 추가적립 5만원이상 구매 시 2천원 추가적립 안내</li>
+                                    <li>5만원이상 구매 시 2천원 추가적립</li>
                                 </ul>
                             </td>
                         </tr>
+                    </table>
+                    <table>    
                         <tr>
-                            <th>구매혜택</th><td><span><img src="img/sub/good.png" alt="">에디터 추천</span><span><img src="img/sub/sun.png" alt="">당일 출고</span></td>
-                        </tr>
-                        <tr>
-                            <th>구매수량</th><td><button>-</button><input type="text"><button>+</button></td>
+                            <th>구매혜택</th><td class="plus_pay"><span><img src="img/sub/good.png" alt="">에디터 추천</span><span><img src="img/sub/sun.png" alt="">당일 출고</span></td>
                         </tr>
                     </table>
+                    <table>    
+                        <tr>
+                            <th>구매수량</th><td><button class="minus">-</button><input type="text" value="3" class="count"><button class="plus">+</button></td>
+                        </tr>
+                    </table>
+                    <div class="price">
+                        <span>합계</span><span>10,620원</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,6 +135,27 @@
             <p>Copyright © 2022 밀리의 서재 All Rights Reserved.</p>
         </footer>
     </div>
+
+    <script>
+        const count = document.querySelector(".count");
+        // let count_num = count.value;
+        const plus = document.querySelector(".plus");
+        const minus = document.querySelector(".minus");
+
+        plus.addEventListener("click", function(){
+            count.value ++;
+        });
+
+        minus.addEventListener("click", function(){
+            count.value --;
+            if(count.value <= 0){
+                count.value = 1;
+                alert("1권 이상 구매가 가능합니다");
+            }
+        });
+
+
+    </script>
 </body>
 
 </html>
