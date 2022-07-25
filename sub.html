@@ -68,18 +68,22 @@
                             </td>
                         </tr>
                     </table>
-                    <table>    
+                    <table>
                         <tr>
-                            <th>구매혜택</th><td class="plus_pay"><span><img src="img/sub/good.png" alt="">에디터 추천</span><span><img src="img/sub/sun.png" alt="">당일 출고</span></td>
+                            <th>구매혜택</th>
+                            <td class="plus_pay"><span><img src="img/sub/good.png" alt="">에디터 추천</span><span><img
+                                        src="img/sub/sun.png" alt="">당일 출고</span></td>
                         </tr>
                     </table>
-                    <table>    
+                    <table>
                         <tr>
-                            <th>구매수량</th><td><button class="minus">-</button><input type="text" value="3" class="count"><button class="plus">+</button></td>
+                            <th>구매수량</th>
+                            <td><button class="minus">-</button><input type="text" value="1" class="count"><button
+                                    class="plus">+</button></td>
                         </tr>
                     </table>
                     <div class="price">
-                        <span>합계</span><span>10,620원</span>
+                        <span>합계</span><span class="price_data">10,620원</span>
                     </div>
                 </div>
             </div>
@@ -138,19 +142,36 @@
 
     <script>
         const count = document.querySelector(".count");
-        // let count_num = count.value;
+        const price = document.querySelector(".price_data");
         const plus = document.querySelector(".plus");
         const minus = document.querySelector(".minus");
 
-        plus.addEventListener("click", function(){
-            count.value ++;
+        plus.addEventListener("click", function () {
+            count.value++;
+            if( count.value > 100){
+                alert("100권 초과 구매는 불가능합니다.");
+                count.value = 1;
+            }
         });
 
-        minus.addEventListener("click", function(){
-            count.value --;
-            if(count.value <= 0){
+        minus.addEventListener("click", function () {
+            count.value--;
+            if (count.value <= 0) {
                 count.value = 1;
-                alert("1권 이상 구매가 가능합니다");
+                alert("1권 이상 구매가 가능합니다.");
+            }
+        });
+
+        count.addEventListener("keyup", function () {
+            if (isNaN(count.value)) {
+                alert("숫자를 입력하세요.");
+                count.value = 1;
+            } else if (count.value % 1 != 0) {
+                alert("수량을 정수로 입력하세요.");
+                count.value = 1;
+            }else if( count.value > 100){
+                alert("100권 초과 구매는 불가능합니다.");
+                count.value = 1;
             }
         });
 
