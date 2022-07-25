@@ -17,11 +17,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 50px;
 }
 
 .book {
   width: 47%;
-  height: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,11 +101,10 @@
 
 .choice {
   width: 53%;
-  height: 100%;
+  height: auto;
 }
 
 .choice h2 {
-  margin-top: 130px;
   font-size: 24px;
 }
 
@@ -198,7 +201,6 @@
 .choice .price {
   width: 100%;
   height: auto;
-  padding: 30px 200px 0 0;
   text-align: right;
 }
 
@@ -210,12 +212,39 @@
 .choice .price span:nth-child(2) {
   font-size: 20px;
   font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.choice .purchase_box {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 6%;
+}
+
+.choice .purchase_box li {
+  cursor: pointer;
+  width: 50%;
+  line-height: 50px;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border: #cdcdcd 1px solid;
+}
+
+.choice .purchase_box li:nth-child(2) {
+  background-color: #333;
+  color: white;
+  -webkit-box-shadow: 0px 0px 10px 1.5px #999;
+          box-shadow: 0px 0px 10px 1.5px #999;
 }
 
 #series {
   width: 100%;
   height: 350px;
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,13 +256,141 @@
 #series .check {
   width: 350px;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid #e5e5e5;
+  border-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#series .check > div {
+  width: 100%;
+  height: 50%;
+  padding: 0 10%;
+}
+
+#series .check_top h5 {
+  padding-top: 18%;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+#series .check_top a {
+  font-size: 10px;
+  color: #999999;
+  text-align: center;
+  border: 1px solid #EEEEEE;
+  border-radius: 50px;
+  padding: 6px;
+}
+
+#series .check_bot .total_check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#series .check_bot .total_check input {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+#series .check_bot .total_check span {
+  font-size: 13px;
+  margin-left: 12px;
+}
+
+#series .check_bot ul {
+  margin-top: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#series .check_bot ul li {
+  width: 50%;
+  border: #cdcdcd 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#series .check_bot ul li img {
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+}
+
+#series .check_bot .series_now {
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  background-color: #333;
+  text-align: center;
+  line-height: 50px;
+  font-size: 13px;
 }
 
 #series .series_book {
   width: 950px;
   height: 100%;
-  border: 1px solid black;
+  border: 1px solid #e5e5e5;
+  border-left: 0;
+  border-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 2.5%;
+}
+
+#series .series_book input {
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+#series .series_book .series_box {
+  width: 200px;
+  height: 100%;
+  padding: 5% 0;
+  margin-right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#series .series_book .series_box h3 {
+  font-size: 14px;
+}
+
+#series .series_book .series_box h5 {
+  font-size: 10px;
 }
 
 #more {
@@ -290,7 +447,7 @@
 #guide .contents .sticky_wrap {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 80px;
   left: 100%;
   width: 330px;
   height: 100vh;
