@@ -127,18 +127,38 @@
             </div>
         </div>
 
-        <div id="category_wrap">
-            <ul class="category">
-                <li>책소개</li>
-                <li>리뷰</li>
-            </ul>
-        </div>
+
 
         <div id="guide">
+            <div id="category_wrap">
+                <ul class="category">
+                    <li>소개</li>
+                    <li>리뷰</li>
+                </ul>
+            </div>
             <div class="contents">
                 <div class="detail"></div>
                 <!-- <div id="review"></div> -->
-                <div class="sticky_wrap"></div>
+                <div class="sticky_wrap">
+                    <div class="mini_purchase">
+                        <div class="mini_book">
+                            <div class="mini_img"></div>
+                            <div class="mini_title">
+                                <div>
+                                    <button class="minus">-</button>
+                                    <input type="text" value="1" class="count">
+                                    <button class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini_price">
+                            <span>합계</span><span class="mini_total">10620원</span>
+                        </div>
+                    </div>
+                    <div class="guide_btn"></div>
+                    <div class="guide_btn"></div>
+                    <div class="guide_btn"></div>
+                </div>
             </div>
         </div>
         <footer>
@@ -219,6 +239,23 @@
                 checkbox.checked = selectAll.checked
             })
         }
+
+        let win_top = window.scrollY;
+        //   const cate_top = 
+
+
+
+        // $(function () {
+        //     $.get("./sub_txt/txt1.txt", function (data) {
+        //         $("#tmpBox").html(data);
+        //     })
+        // });
+
+        $(function () {
+            $.get("txt/sub/detail.txt", function (data) {
+                $(".detail").html(data);
+            })
+        });
 
     </script>
 </body>

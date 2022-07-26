@@ -48,7 +48,7 @@
           box-shadow: 0px 0px 10px 10px #EEEEEE;
 }
 
-.book .left_detail {
+.left_detail {
   width: 300px;
   height: 200px;
   display: -webkit-box;
@@ -66,7 +66,7 @@
           justify-content: space-evenly;
 }
 
-.book .left_detail li:first-child {
+.left_detail li:first-child {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -79,23 +79,23 @@
           align-items: center;
 }
 
-.book .left_detail li:first-child img {
+.left_detail li:first-child img {
   width: 28px;
   height: 28px;
 }
 
-.book .left_detail li:first-child a {
+.left_detail li:first-child a {
   font-size: 12px;
   margin-left: 2%;
   color: #999;
 }
 
-.book .left_detail li:nth-child(2) {
+.left_detail li:nth-child(2) {
   font-size: 12px;
   color: #777;
 }
 
-.book .left_detail li:nth-child(3) img {
+.left_detail li:nth-child(3) img {
   width: 150px;
 }
 
@@ -396,18 +396,23 @@
 #more {
   width: 100%;
   height: 200px;
-  border: 1px solid black;
 }
 
 #more .contents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #more .contents div {
-  width: 50%;
-  height: 100%;
+  width: 45%;
+  height: 50%;
   border: 1px solid black;
 }
 
@@ -421,7 +426,6 @@
   margin: 0 auto;
   width: 1300px;
   height: 50px;
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,20 +440,132 @@
 
 #guide {
   width: 100%;
-  height: 300vh;
-  border: 1px solid black;
+  height: auto;
 }
 
 #guide .contents {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#guide .contents .sticky_wrap {
+#guide .contents .detail {
+  width: 72%;
+  padding: 0 6%;
+}
+
+#guide .contents .detail h3 {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 40px;
+  margin: 60px 0 30px;
+}
+
+#guide .contents .detail p {
+  color: #666;
+  line-height: 27.5px;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+#guide .contents .detail li {
+  color: #666;
+  line-height: 27.5px;
+  font-size: 14px;
+}
+
+#guide .contents .detail h5 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#guide .contents .detail h6 {
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+
+.sticky_wrap {
   position: -webkit-sticky;
   position: sticky;
   top: 80px;
-  left: 100%;
-  width: 330px;
+  width: 28%;
   height: 100vh;
-  border: 1px solid black;
+}
+
+.sticky_wrap .mini_purchase {
+  width: 280px;
+  height: 450px;
+  margin: 60px auto 20px;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+}
+
+.mini_book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mini_book img {
+  height: 100%;
+}
+
+.mini_book div {
+  width: 45%;
+}
+
+.mini_book div h5 {
+  font-size: 12.5px;
+}
+
+.mini_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5% 0;
+}
+
+.mini_title div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.mini_title div input {
+  width: 65%;
+  height: 28px;
+  border: 1px solid #cdcdcd;
+  border-left: 0;
+  border-right: 0;
+  text-align: center;
+}
+
+.mini_title div button {
+  width: 35%;
+  height: 28px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  cursor: pointer;
+}
+
+.guide_btn {
+  width: 280px;
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  margin: 0 auto 10px;
 }
