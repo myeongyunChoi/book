@@ -137,27 +137,49 @@
                 </ul>
             </div>
             <div class="contents">
-                <div class="detail"></div>
-                <!-- <div id="review"></div> -->
+                <div class="detail">
+                    <div class="book_detail"></div>
+                    <div class="review">
+                        <div class="review_head">
+                            <h3>북로그 리뷰 총 10권</h3>
+                            <p><b>4.1</b>/5<img src="img/sub/icon_star.png" alt=""></p>
+                        </div>
+                        <div class="review_page"></div>
+                    </div>
+                </div>
+
                 <div class="sticky_wrap">
                     <div class="mini_purchase">
                         <div class="mini_book">
                             <div class="mini_img"></div>
                             <div class="mini_title">
                                 <div>
-                                    <button class="minus">-</button>
-                                    <input type="text" value="1" class="count">
-                                    <button class="plus">+</button>
+                                    <button class="right_minus">-</button>
+                                    <input type="text" value="1" class="right_count">
+                                    <button class="right_plus">+</button>
                                 </div>
                             </div>
                         </div>
                         <div class="mini_price">
-                            <span>합계</span><span class="mini_total">10620원</span>
+                            <span>합계</span><span class="right_total">10620원</span>
                         </div>
+                        <ul class="buy">
+                            <li onclick="login()">장바구니</li>
+                            <li onclick="login()">바로구매</li>
+                        </ul>
                     </div>
-                    <div class="guide_btn"></div>
-                    <div class="guide_btn"></div>
-                    <div class="guide_btn"></div>
+                    <div class="guide_btn">
+                        <img src="img/sub/icon_book.png" alt="">
+                        <span>책 목차</span>
+                    </div>
+                    <div class="guide_btn">
+                        <img src="img/sub/icon_inform.png" alt="">
+                        <span>품목정보</span>
+                    </div>
+                    <div class="guide_btn">
+                        <img src="img/sub/icon_box.png" alt="">
+                        <span>배송/교환/반품안내</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,21 +263,61 @@
         }
 
         let win_top = window.scrollY;
-        //   const cate_top = 
-
-
-
-        // $(function () {
-        //     $.get("./sub_txt/txt1.txt", function (data) {
-        //         $("#tmpBox").html(data);
-        //     })
-        // });
+//이거 뭐할라했지
 
         $(function () {
             $.get("txt/sub/detail.txt", function (data) {
-                $(".detail").html(data);
+                $(".book_detail").html(data);
             })
         });
+
+        $(function () {
+            $.get("txt/sub/review.txt", function (data) {
+                $(".review_page").html(data);
+            })
+        });
+
+        const right_count = document.querySelector(".right_count");
+        const right_total = document.querySelector(".right_total");
+        const right_plus = document.querySelector(".right_plus");
+        const right_minus = document.querySelector(".right_minus");
+
+        right_plus.addEventListener("click", function () {
+            right_count.value++;
+            if (right_count.value > 100) {
+                alert("100권 초과 구매는 불가능합니다.");
+                right_count.value = 1;
+            }
+            right_total.innerHTML = right_count.value * 10620 + "원";
+        });
+
+        right_minus.addEventListener("click", function () {
+            right_count.value--;
+            if (right_count.value <= 0) {
+                right_count.value = 1;
+                alert("1권 이상 구매가 가능합니다.");
+            }
+            right_total.innerHTML = right_count.value * 10620 + "원";
+        });
+
+        right_count.addEventListener("keyup", function () {
+            if (isNaN(right_count.value)) {
+                alert("숫자를 입력하세요.");
+                right_count.value = 1;
+            } else if (right_count.value % 1 != 0) {
+                alert("수량을 정수로 입력하세요.");
+                right_count.value = 1;
+            } else if (right_count.value > 100) {
+                alert("100권 초과 구매는 불가능합니다.");
+                right_count.value = 1;
+            } else if (right_count.value <= 0) {
+                right_count.value = 1;
+                alert("1권 이상 구매가 가능합니다.");
+            }
+            right_total.innerHTML = right_count.value * 10620 + "원";
+        });
+
+
 
     </script>
 </body>
