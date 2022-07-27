@@ -133,16 +133,25 @@
             <div id="category_wrap">
                 <ul class="category">
                     <li>소개</li>
-                    <li>리뷰</li>
+                    <li class="review_btn">리뷰</li>
                 </ul>
             </div>
             <div class="contents">
                 <div class="detail">
-                    <div class="book_detail"></div>
+                    <div class="detail_wrap">
+                        <div class="book_detail"></div>
+                        <div class="more_box">
+                            <div class="more_btn">상품 내용 모두 보기</div>
+                        </div>
+                    </div>
+                    <div class="detail_more_wrap hide">
+                        <div class="detail_more "></div>
+                        <div class="close_btn">상품 내용 접어두기</div>
+                    </div>
                     <div class="review">
                         <div class="review_head">
                             <h3>북로그 리뷰 총 10권</h3>
-                            <p><b>4.1</b>/5<img src="img/sub/icon_star.png" alt=""></p>
+                            <p><b>4.7</b>/5<img src="img/sub/icon_star.png" alt=""></p>
                         </div>
                         <div class="review_page"></div>
                     </div>
@@ -258,12 +267,19 @@
             let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
             checkboxes.forEach(function (checkbox) {
-                checkbox.checked = selectAll.checked
+                checkbox.checked = selectAll.checked;
             })
         }
 
+
         let win_top = window.scrollY;
-//이거 뭐할라했지
+        const review_btn = document.querySelector(".review_btn");
+
+        review_btn.addEventListener("click", function () {
+            const review_top = document.querySelector("#guide").offsetTop + document.querySelector(".review").offsetTop;
+            window.scrollTo({ top: review_top, behavior: "smooth" });
+        });
+
 
         $(function () {
             $.get("txt/sub/detail.txt", function (data) {
@@ -272,10 +288,31 @@
         });
 
         $(function () {
+            $.get("txt/sub/detail_more.txt", function (data) {
+                $(".detail_more").html(data);
+            })
+        });
+
+        $(function () {
             $.get("txt/sub/review.txt", function (data) {
                 $(".review_page").html(data);
             })
         });
+
+        const more_btn = document.querySelector(".more_btn");
+        const close_btn = document.querySelector(".close_btn");
+        const detail_more = document.querySelector(".detail_more_wrap");
+        const more_box = document.querySelector(".more_box");
+
+        more_btn.onclick = function () {
+            more_box.classList.add("hide");
+            detail_more.classList.remove("hide");
+        };
+
+        close_btn.onclick = function () {
+            more_box.classList.remove("hide");
+            detail_more.classList.add("hide");
+        };
 
         const right_count = document.querySelector(".right_count");
         const right_total = document.querySelector(".right_total");
@@ -316,8 +353,6 @@
             }
             right_total.innerHTML = right_count.value * 10620 + "원";
         });
-
-
 
     </script>
 </body>
