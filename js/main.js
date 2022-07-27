@@ -44,7 +44,7 @@ bg_prev.addEventListener("click", function () {
         setTimeout(function () {
             slide.style.left = -slide_count * slide_width + "px";
             slide.style.transition = `0s ease-out`;
-        }, 500);
+        }, 750);
         idx = slide_count;
     }
     idx -= 1;

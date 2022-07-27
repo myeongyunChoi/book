@@ -20,7 +20,8 @@ $border : 1px solid #e5e5e5;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: 50px;
+        margin-top: 100px;
+        padding-bottom: 60px;
     }
 }
 
@@ -321,10 +322,9 @@ $border : 1px solid #e5e5e5;
         justify-content: space-evenly;
         align-items: center;
 
-        div {
-            width: 45%;
+        img {
+            cursor: pointer;
             height: 50%;
-            border: 1px solid black;
         }
     }
 }
@@ -506,7 +506,6 @@ $border : 1px solid #e5e5e5;
         border-top: 1px solid #cdcdcd;
         border-bottom: 1px solid #cdcdcd;
 
-
         p{
             display: flex;
             align-items: center;
@@ -531,7 +530,7 @@ $border : 1px solid #e5e5e5;
     span{
         display: inline-block;
         margin: 50px 40px 25px 0;
-        font-size: 10px;
+        font-size: 14px;
         
         b{
             font-size: 15px;
@@ -637,6 +636,7 @@ $border : 1px solid #e5e5e5;
     height: 100px;
 
     li{
+        cursor: pointer;
         border: 1px solid #cdcdcd;
         width: 100%;
         line-height: 50px;

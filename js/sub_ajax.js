@@ -20,8 +20,8 @@ $(function () {
         .done(function (msg) {
             let series_box = document.getElementsByClassName("series_box");
             for (let i = 0; i < series_box.length; i++) {
-                $(".series_box").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
-                $(".series_box").eq(i).append("<h3>" + '<a href="">' + msg.documents[i].title + "</a>" + "</h3>");
+                $(".series_box").eq(i).append('<a href="index.html">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
+                $(".series_box").eq(i).append("<h3>" + '<a href="index.html">' + msg.documents[i].title + "</a>" + "</h3>");
                 $(".series_box").eq(i).append("<h5>" + msg.documents[i].authors + "</h5>");
             }
         });
