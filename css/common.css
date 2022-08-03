@@ -1,14 +1,16 @@
 @font-face {
-  font-family: "NanumBarunGothic";
+  font-family: 'NanumBarunGothic';
   font-style: normal;
   font-weight: 400;
   src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
   src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix") format("embedded-opentype"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff") format("woff"), url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf") format("truetype");
 }
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ol,
@@ -41,32 +43,48 @@ header {
   height: 80px;
   position: fixed;
   background-color: #fff;
-  box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
+          box-shadow: 0px 2px 2px 0px rgba(46, 46, 46, 0.09);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: 80px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 500;
 }
+
 header .logo {
   width: auto;
   height: 45px;
   margin-left: 2%;
 }
+
 header .logo a img {
   width: auto;
   height: 100%;
 }
+
 header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 50%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   cursor: pointer;
 }
+
 header .menu li {
   position: relative;
   font-size: 18px;
 }
+
 header .menu li::after {
   content: "";
   position: absolute;
@@ -74,11 +92,14 @@ header .menu li::after {
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-transition: 0.1s;
   transition: 0.1s;
 }
+
 header .menu li:hover::after {
   border-bottom: 3px solid black;
 }
+
 header .login {
   margin-right: 2%;
   font-size: 18px;
@@ -97,19 +118,27 @@ footer {
   background-color: #818181;
   padding: 1%;
 }
+
 footer a {
   color: white;
   font-family: "NanumBarunGothic";
 }
+
 footer .fot_logo a {
   font-size: 14px;
   line-height: 70px;
 }
+
 footer .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
+
 footer p {
   color: white;
   line-height: 50px;
@@ -117,23 +146,34 @@ footer p {
 }
 
 .guide {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 50%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .guide a {
   font-size: 11px;
 }
 
 .sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 25%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .sns img {
   width: 50px;
   height: auto;
 }
+
 .sns .blog {
   width: 30px;
   height: auto;
